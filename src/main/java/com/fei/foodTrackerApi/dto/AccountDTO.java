@@ -1,4 +1,4 @@
-package com.fei.solveithomeapi.dto;
+package com.fei.foodTrackerApi.dto;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

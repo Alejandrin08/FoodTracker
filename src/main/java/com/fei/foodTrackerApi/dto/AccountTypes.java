@@ -1,4 +1,4 @@
-package com.fei.solveithomeapi.dto;
+package com.fei.foodTrackerApi.dto;
 
 public enum AccountTypes {
     CLIENT,

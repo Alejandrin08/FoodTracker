@@ -1,7 +1,7 @@
-package com.fei.solveithomeapi.controller;
+package com.fei.foodTrackerApi.controller;
 
-import com.fei.solveithomeapi.dto.AccountDTO;
-import com.fei.solveithomeapi.service.implementations.AccountService;
+import com.fei.foodTrackerApi.dto.AccountDTO;
+import com.fei.foodTrackerApi.service.implementations.AccountService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

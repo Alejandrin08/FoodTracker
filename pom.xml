@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fei</groupId>
-    <artifactId>solveithomeapi</artifactId>
+    <artifactId>FoodTracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>solvethomeapi</name>
     <description>solvethomeapi</description>
@@ -71,6 +71,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.12.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,7 +1,5 @@
-package com.fei.solveithomeapi.repository;
+package com.fei.foodTrackerApi.repository;
 
-import com.fei.solveithomeapi.dto.AccountDTO;
-import com.fei.solveithomeapi.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

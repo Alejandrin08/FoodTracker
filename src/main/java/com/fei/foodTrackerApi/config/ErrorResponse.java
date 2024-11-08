@@ -1,4 +1,4 @@
-package com.fei.solveithomeapi.config;
+package com.fei.foodTrackerApi.config;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.fei.solveithomeapi.config;
+package com.fei.foodTrackerApi.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,8 @@
-package com.fei.solveithomeapi.service.implementations;
+package com.fei.foodTrackerApi.service.implementations;
 
-import com.fei.solveithomeapi.dto.AccountDTO;
-import com.fei.solveithomeapi.model.Account;
-import com.fei.solveithomeapi.repository.AccountRepository;
-import com.fei.solveithomeapi.service.interfaces.IAccount;
+import com.fei.foodTrackerApi.dto.AccountDTO;
+import com.fei.foodTrackerApi.repository.AccountRepository;
+import com.fei.foodTrackerApi.service.interfaces.IAccount;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.fei.solveithomeapi.model;
+package com.fei.foodTrackerApi.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -12,9 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "Account", schema = "solveithome", indexes = {
-        @Index(name = "idx_account_email", columnList = "email")
-})
+@Table(name = "Account", schema = "foodtracker")
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +35,6 @@ public class Account {
     private String accountType;
 
     @OneToMany(mappedBy = "account")
-    private Set<com.fei.solveithomeapi.model.Client> clients = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "account")
-    private Set<com.fei.solveithomeapi.model.Professional> professionals = new LinkedHashSet<>();
+    private Set<Client> clients = new LinkedHashSet<>();
 
 }
