@@ -58,7 +58,6 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant")
     private Set<Menu> menus = new LinkedHashSet<>();
 
-    @OneToOne(mappedBy = "rating")
+    @OneToOne(mappedBy = "restaurant")
     private Rating rating;
-
 }

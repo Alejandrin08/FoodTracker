@@ -1,5 +1,6 @@
 package com.fei.foodTrackerApi.config;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
@@ -7,12 +8,13 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 @Component
 public class JwtUtil {
-    private final String SECRET = "your-secret-key";
+    private final String SECRET = "1PVoafDtb,XKl-T&F8th;S2-[R+)BKMd";
     private final long EXPIRATION_TIME = 900_000;
-/*
+
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -20,18 +22,23 @@ public class JwtUtil {
     public Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
-/*
+
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
-    }*/
+    }
 
- /*   private Claims extractAllClaims(String token) {
-        return Jwts.parser().setSigningKey(SECRET).parseClaimsJwts(token).getBody();
-    }*/
+    private Claims extractAllClaims(String token) {
+        return Jwts.parser()
+                .setSigningKey(SECRET)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
 
-    public String generateToken(String username) {
+    public String generateToken(String username, String userType) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("userType", userType);
         return createToken(claims, username);
     }
 

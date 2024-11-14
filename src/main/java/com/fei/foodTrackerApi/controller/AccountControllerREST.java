@@ -1,7 +1,7 @@
 package com.fei.foodTrackerApi.controller;
 
 import com.fei.foodTrackerApi.dto.AccountDTO;
-import com.fei.foodTrackerApi.service.implementations.AccountService;
+import com.fei.foodTrackerApi.service.interfaces.IAccount;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,10 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AccountControllerREST {
 
-    private final AccountService accountService;
+    private final IAccount accountService;
 
-    @PostMapping()
-    public ResponseEntity<String> createAccount(@Valid @RequestBody AccountDTO accountDTO) {
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody @Valid String email, String password) {
+        String token = accountService.login(email, password);
+        if (token != null) {
+            return ResponseEntity.ok(token);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<String> createAccount(@RequestBody @Valid AccountDTO accountDTO) {
         Integer id = accountService.createAccount(accountDTO);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
