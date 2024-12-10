@@ -3,6 +3,7 @@ package com.fei.foodTrackerApi.service.interfaces;
 import com.fei.foodTrackerApi.dto.AccountDTO;
 
 public interface IAccount {
-    Integer createAccount(AccountDTO accountDTO);
-    String login(String email, String password);
+    AccountDTO createAccount(AccountDTO accountDTO);
+    String login(AccountDTO loginDTO);
+    AccountDTO modifyAccount(Integer id, AccountDTO loginDTO);
 }

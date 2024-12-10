@@ -11,14 +11,12 @@ public class AccountDTO {
     private Integer id;
 
     @Email()
-    @NotNull()
+    @NotEmpty
     private String email;
 
     @Pattern(regexp = "^(?!\\s*$)(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{5,}$")
-    @NotNull()
     private String password;
 
-    @NotNull()
     @Enumerated(EnumType.STRING)
     private AccountTypes accountType;
 }
